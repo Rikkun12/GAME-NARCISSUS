@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ylgv1dkienl3"]
+[gd_scene load_steps=11 format=3 uid="uid://ylgv1dkienl3"]
 
 [ext_resource type="Texture2D" uid="uid://bnv6v4q3l24t3" path="res://Assets/Tileset/1 Tiles/Tileset.png" id="1_b8y88"]
+[ext_resource type="Texture2D" uid="uid://cgs5u0u2cf7f0" path="res://Assets/Tileset/2 Background/Forest layers/1.png" id="2_atbmw"]
 [ext_resource type="Texture2D" uid="uid://bk182404yadss" path="res://Assets/Tileset/2 Background/Forest layers/2.png" id="2_disu0"]
 [ext_resource type="PackedScene" uid="uid://dbquepsh6d5b" path="res://Scenes/player.tscn" id="3_8jx0v"]
 [ext_resource type="Texture2D" uid="uid://bh6osj72ioi5r" path="res://Assets/Tileset/2 Background/Forest layers/3.png" id="3_xm4ls"]
@@ -873,6 +874,15 @@ zoom = Vector2(3.8, 3.8)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.001, 0.001)
+motion_mirroring = Vector2(500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(381, 95)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_atbmw")
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 5
 position = Vector2(286, 99)
@@ -924,6 +934,7 @@ offset = Vector2(0.2, 0)
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 5
 position = Vector2(286, 99)
+motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]

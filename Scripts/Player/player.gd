@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var input
-@export var speed = 100.0
+@export var speed = 300.0
 @export var gravity = 10
 
 #State Machine 
