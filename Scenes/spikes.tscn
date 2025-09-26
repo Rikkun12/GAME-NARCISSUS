@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv0nfsttcgwvg"]
+
+[ext_resource type="Script" uid="uid://bqyod10mnu8wq" path="res://Scripts/Interactables/spikes.gd" id="1_gwqs2"]
+[ext_resource type="Texture2D" uid="uid://cg3624mgxkig7" path="res://Assets/Tileset/PNG/Objects_separately/Thorn_plant_shadow1_2.png" id="2_0qgod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvr35"]
+size = Vector2(89.5, 51.5)
+
+[node name="spikes" type="Area2D"]
+script = ExtResource("1_gwqs2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0qgod")
+region_rect = Rect2(0, 0, 640, 128)
+
+[node name="hitbox_collision" type="CollisionShape2D" parent="."]
+position = Vector2(4.25, -0.75)
+shape = SubResource("RectangleShape2D_qvr35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
