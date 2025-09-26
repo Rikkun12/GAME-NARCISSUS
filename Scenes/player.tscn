@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbquepsh6d5b"]
+
+[ext_resource type="Script" uid="uid://0x7kyvi7f20g" path="res://Scripts/Player/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://fdfg786f30g4" path="res://Assets/Characters/Bennedict/ben.png" id="1_v0iea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+radius = 5.0
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "walk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "front_idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8erm5"]
+_data = {
+&"Idle": SubResource("Animation_6t5aa"),
+&"RESET": SubResource("Animation_vgqql"),
+&"attack": SubResource("Animation_x3wgy"),
+&"front_idle": SubResource("Animation_3smsa"),
+&"walk": SubResource("Animation_fkybt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ek2"]
+size = Vector2(10.5, 7)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("1_v0iea")
+hframes = 4
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8erm5")
+}
+autoplay = "Idle"
+
+[node name="sword" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sword"]
+position = Vector2(8.75, 4)
+shape = SubResource("RectangleShape2D_f1ek2")
+debug_color = Color(0.88574857, 0.24311858, 0.5745564, 0.41960785)
