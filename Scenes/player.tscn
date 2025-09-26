@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dbquepsh6d5b"]
 
-[ext_resource type="Script" uid="uid://0x7kyvi7f20g" path="res://Scripts/Player/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://fdfg786f30g4" path="res://Assets/Characters/Bennedict/ben.png" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://0x7kyvi7f20g" path="res://Scripts/Player/player.gd" id="1_cg5if"]
+[ext_resource type="Texture2D" uid="uid://fdfg786f30g4" path="res://Assets/Characters/Bennedict/ben.png" id="2_yfkcp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 5.0
@@ -38,6 +38,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sword/sword_collider:debug_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.88574857, 0.24311858, 0.5745564, 0.41960785)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sword/sword_collider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_fkybt"]
 resource_name = "walk"
@@ -70,6 +94,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [16, 17, 18, 19]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sword/sword_collider:debug_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.88574857, 0.24311858, 0.5745564, 0.41960785), Color(0.88574857, 0.24311858, 0.5745564, 0.41960785)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sword/sword_collider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.49246886, 1.0598537, 1.9965986),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_3smsa"]
 resource_name = "front_idle"
@@ -101,11 +149,11 @@ _data = {
 size = Vector2(10.5, 7)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_cg5if")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.453125, 0.453125)
-texture = ExtResource("1_v0iea")
+texture = ExtResource("2_yfkcp")
 hframes = 4
 vframes = 5
 
@@ -120,7 +168,8 @@ autoplay = "Idle"
 
 [node name="sword" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sword"]
+[node name="sword_collider" type="CollisionShape2D" parent="sword"]
 position = Vector2(8.75, 4)
 shape = SubResource("RectangleShape2D_f1ek2")
+disabled = true
 debug_color = Color(0.88574857, 0.24311858, 0.5745564, 0.41960785)
