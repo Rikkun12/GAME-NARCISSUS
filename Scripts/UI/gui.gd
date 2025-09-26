@@ -1,4 +1,4 @@
-extends CanvasLayer
+'''extends CanvasLayer
 
 const health_bar_size = 10
 const health_offset = 0
@@ -30,3 +30,4 @@ func display_HP():
 			health.frame = (player_data.life - last_health) * 4
 		if index < last_health:
 			health.frame = 4
+'''

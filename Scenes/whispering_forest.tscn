@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://fxxlmghn76kr" path="res://Assets/Tileset/2 Background/Forest layers/4.png" id="4_a2ayu"]
 [ext_resource type="Texture2D" uid="uid://ciecco4l2p52h" path="res://Assets/Tileset/2 Background/Forest layers/5.png" id="5_8d6rv"]
 [ext_resource type="Texture2D" uid="uid://coe4hqg7xg86f" path="res://Assets/Tileset/2 Background/Forest layers/6.png" id="6_xygvg"]
-[ext_resource type="Texture2D" uid="uid://c7kjc4g5flw7w" path="res://Assets/HUD/Health/healthbar spritesheet.png" id="10_a2ayu"]
-[ext_resource type="Script" uid="uid://bv0qfp5a87k4v" path="res://Scripts/UI/gui.gd" id="10_xygvg"]
-[ext_resource type="Texture2D" uid="uid://cbrwgriso7ph2" path="res://Assets/HUD/Sword/sword8.png" id="11_8d6rv"]
+[ext_resource type="Texture2D" uid="uid://bx7qgsdnwgj4m" path="res://Assets/HUD/Health/redblue (3).png" id="10_8d6rv"]
+[ext_resource type="Texture2D" uid="uid://cwmdxhsccbjmj" path="res://Assets/HUD/Health/redblue (2).png" id="11_xygvg"]
+[ext_resource type="Script" uid="uid://cdhrgl6m0e6nn" path="res://Scripts/UI/texture_progress_bar.gd" id="12_xygvg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atbmw"]
 texture = ExtResource("1_b8y88")
@@ -983,16 +983,13 @@ rotation = -0.83077675
 position = Vector2(1074, 225)
 
 [node name="GUI" type="CanvasLayer" parent="."]
-script = ExtResource("10_xygvg")
 
-[node name="player_life" type="Sprite2D" parent="GUI"]
-position = Vector2(276, 117)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_a2ayu")
-hframes = 4
-vframes = 3
-
-[node name="weapon" type="Sprite2D" parent="GUI"]
-position = Vector2(75, 66)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_8d6rv")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GUI"]
+offset_left = -1.0
+offset_top = -72.0
+offset_right = 216.0
+offset_bottom = 145.0
+scale = Vector2(3, 3)
+texture_under = ExtResource("10_8d6rv")
+texture_progress = ExtResource("11_xygvg")
+script = ExtResource("12_xygvg")

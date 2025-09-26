@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjgi2o0dcvguv"
-path="res://.godot/imported/sword2.png-eb174879b29f7931c223fb0d20ce3cbb.ctex"
+uid="uid://cwmdxhsccbjmj"
+path="res://.godot/imported/redblue (2).png-a0b26a7535237443ce4d15cbc995abad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD/Sword/sword2.png"
-dest_files=["res://.godot/imported/sword2.png-eb174879b29f7931c223fb0d20ce3cbb.ctex"]
+source_file="res://Assets/HUD/Health/redblue (2).png"
+dest_files=["res://.godot/imported/redblue (2).png-a0b26a7535237443ce4d15cbc995abad.ctex"]
 
 [params]
 
