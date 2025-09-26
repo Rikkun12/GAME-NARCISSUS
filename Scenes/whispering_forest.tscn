@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ylgv1dkienl3"]
+[gd_scene load_steps=16 format=3 uid="uid://ylgv1dkienl3"]
 
 [ext_resource type="Texture2D" uid="uid://bnv6v4q3l24t3" path="res://Assets/Tileset/1 Tiles/Tileset.png" id="1_b8y88"]
 [ext_resource type="PackedScene" uid="uid://cv0nfsttcgwvg" path="res://Scenes/spikes.tscn" id="1_xm4ls"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ciecco4l2p52h" path="res://Assets/Tileset/2 Background/Forest layers/5.png" id="5_8d6rv"]
 [ext_resource type="Texture2D" uid="uid://coe4hqg7xg86f" path="res://Assets/Tileset/2 Background/Forest layers/6.png" id="6_xygvg"]
 [ext_resource type="Texture2D" uid="uid://c7kjc4g5flw7w" path="res://Assets/HUD/Health/healthbar spritesheet.png" id="10_a2ayu"]
+[ext_resource type="Script" uid="uid://bv0qfp5a87k4v" path="res://Scripts/UI/gui.gd" id="10_xygvg"]
 [ext_resource type="Texture2D" uid="uid://cbrwgriso7ph2" path="res://Assets/HUD/Sword/sword8.png" id="11_8d6rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atbmw"]
@@ -871,9 +872,6 @@ distance = 31.0
 
 [node name="Whispering_Forest" type="Node2D"]
 
-[node name="spikes" parent="." instance=ExtResource("1_xm4ls")]
-position = Vector2(920, 222)
-
 [node name="Player" parent="." instance=ExtResource("3_8jx0v")]
 position = Vector2(216, 227)
 collision_mask = 2
@@ -970,9 +968,12 @@ layer_1/tile_data = PackedInt32Array(-3407906, 196609, 10, -3342370, 196609, 10,
 position = Vector2(3608, 133)
 shape = SubResource("WorldBoundaryShape2D_disu0")
 
+[node name="spikes" parent="." instance=ExtResource("1_xm4ls")]
+position = Vector2(920, 222)
+
 [node name="spikes2" parent="." instance=ExtResource("1_xm4ls")]
 position = Vector2(1147, 218)
-rotation = -0.1850049
+rotation = -1.9300153
 
 [node name="spikes3" parent="." instance=ExtResource("1_xm4ls")]
 position = Vector2(1015, 206)
@@ -982,6 +983,7 @@ rotation = -0.83077675
 position = Vector2(1074, 225)
 
 [node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource("10_xygvg")
 
 [node name="player_life" type="Sprite2D" parent="GUI"]
 position = Vector2(276, 117)
