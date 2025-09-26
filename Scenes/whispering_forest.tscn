@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ylgv1dkienl3"]
+[gd_scene load_steps=13 format=3 uid="uid://ylgv1dkienl3"]
 
 [ext_resource type="Texture2D" uid="uid://bnv6v4q3l24t3" path="res://Assets/Tileset/1 Tiles/Tileset.png" id="1_b8y88"]
 [ext_resource type="PackedScene" uid="uid://cv0nfsttcgwvg" path="res://Scenes/spikes.tscn" id="1_xm4ls"]
@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://fxxlmghn76kr" path="res://Assets/Tileset/2 Background/Forest layers/4.png" id="4_a2ayu"]
 [ext_resource type="Texture2D" uid="uid://ciecco4l2p52h" path="res://Assets/Tileset/2 Background/Forest layers/5.png" id="5_8d6rv"]
 [ext_resource type="Texture2D" uid="uid://coe4hqg7xg86f" path="res://Assets/Tileset/2 Background/Forest layers/6.png" id="6_xygvg"]
-[ext_resource type="Texture2D" uid="uid://bx7qgsdnwgj4m" path="res://Assets/HUD/Health/redblue (3).png" id="10_8d6rv"]
-[ext_resource type="Texture2D" uid="uid://cwmdxhsccbjmj" path="res://Assets/HUD/Health/redblue (2).png" id="11_xygvg"]
-[ext_resource type="Script" uid="uid://cdhrgl6m0e6nn" path="res://Scripts/UI/texture_progress_bar.gd" id="12_xygvg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atbmw"]
 texture = ExtResource("1_b8y88")
@@ -981,15 +978,3 @@ rotation = -0.83077675
 
 [node name="spikes4" parent="." instance=ExtResource("1_xm4ls")]
 position = Vector2(1074, 225)
-
-[node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="GUI"]
-offset_left = -1.0
-offset_top = -72.0
-offset_right = 216.0
-offset_bottom = 145.0
-scale = Vector2(3, 3)
-texture_under = ExtResource("10_8d6rv")
-texture_progress = ExtResource("11_xygvg")
-script = ExtResource("12_xygvg")
